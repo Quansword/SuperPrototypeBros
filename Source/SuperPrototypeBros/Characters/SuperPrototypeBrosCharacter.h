@@ -11,18 +11,17 @@ class ASuperPrototypeBrosCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Side view camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* SideViewCameraComponent;
-
-	/** Camera boom positioning the camera beside the character */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* CameraBoom;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Aim, meta = (AllowPrivateAccess = "true"))
+	class UStaticMeshComponent* AimCone;
 
 protected:
 
 	/** Called for side to side input */
 	void MoveRight(float Val);
+
+	void AimUp(float Val);
+
+	void AimRight(float Val);
 
 	/** Handle touch inputs. */
 	void TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location);
@@ -34,12 +33,13 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 
+	float moveAxis, upAim, rightAim;
+	short rAiming;
 
 public:
 	ASuperPrototypeBrosCharacter();
 
-	/** Returns SideViewCameraComponent subobject **/
-	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
-	/** Returns CameraBoom subobject **/
-	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	virtual void Tick(float deltaTime) override;
+
+	FORCEINLINE class UStaticMeshComponent* GetAimCone() const { return AimCone; }
 };

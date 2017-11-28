@@ -1,7 +1,7 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
 #include "SuperPrototypeBrosGameMode.h"
-#include "SuperPrototypeBrosCharacter.h"
+#include "Characters/SuperPrototypeBrosCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
 ASuperPrototypeBrosGameMode::ASuperPrototypeBrosGameMode()
