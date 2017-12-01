@@ -7,7 +7,10 @@
 		{
 			"Name": "SuperPrototypeBros",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	]
 }

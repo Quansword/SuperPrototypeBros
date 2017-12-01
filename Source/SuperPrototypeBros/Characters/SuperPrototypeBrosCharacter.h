@@ -15,7 +15,6 @@ class ASuperPrototypeBrosCharacter : public ACharacter
 	class UStaticMeshComponent* AimCone;
 
 protected:
-
 	/** Called for side to side input */
 	void MoveRight(float Val);
 
