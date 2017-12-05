@@ -35,6 +35,9 @@ protected:
 	float moveAxis, upAim, rightAim;
 	short rAiming;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool loaded;
+
 public:
 	ASuperPrototypeBrosCharacter();
 

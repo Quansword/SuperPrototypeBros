@@ -18,16 +18,8 @@ class SUPERPROTOTYPEBROS_API ABullet : public AActor
 	class UStaticMeshComponent* StaticMesh;
 
 protected:
-	void Shoot(FVector position, float angle);
-
-	void Catch();
-
-	void Hit(UPrimitiveComponent* ThisComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 public:	
 	// Sets default values for this actor's properties
 	ABullet();
-
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 };
