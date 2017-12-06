@@ -37,6 +37,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	bool loaded;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool fired;
 
 public:
 	ASuperPrototypeBrosCharacter();
