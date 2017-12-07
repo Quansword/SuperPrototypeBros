@@ -3,13 +3,19 @@
 #include "SuperPrototypeBrosGameMode.h"
 #include "Characters/SuperPrototypeBrosCharacter.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
 ASuperPrototypeBrosGameMode::ASuperPrototypeBrosGameMode()
 {
 	// set default pawn class to our Blueprinted character
-	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/SideScrollerCPP/Blueprints/SideScrollerCharacter"));
-	if (PlayerPawnBPClass.Class != NULL)
+	static ConstructorHelpers::FClassFinder<APawn> OneBulletChar(TEXT("/Game/SideScrollerCPP/Blueprints/CatCharacter"));
+	if (OneBulletChar.Class != NULL)
 	{
-		DefaultPawnClass = PlayerPawnBPClass.Class;
+		DefaultPawnClass = OneBulletChar.Class;
 	}
+}
+
+void ASuperPrototypeBrosGameMode::BeginPlay()
+{
+	UGameplayStatics::CreatePlayer(this);
 }

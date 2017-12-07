@@ -13,6 +13,8 @@ class ASuperPrototypeBrosGameMode : public AGameModeBase
 
 public:
 	ASuperPrototypeBrosGameMode();
+
+	virtual void BeginPlay() override;
 };
 
 
