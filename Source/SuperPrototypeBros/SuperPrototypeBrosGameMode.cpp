@@ -4,6 +4,7 @@
 #include "Characters/SuperPrototypeBrosCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
+#include "Blueprint/UserWidget.h"
 
 ASuperPrototypeBrosGameMode::ASuperPrototypeBrosGameMode()
 {
