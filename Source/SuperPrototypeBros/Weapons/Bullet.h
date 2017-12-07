@@ -19,6 +19,9 @@ class SUPERPROTOTYPEBROS_API ABullet : public AActor
 
 protected:
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool canKill;
+
 public:	
 	// Sets default values for this actor's properties
 	ABullet();

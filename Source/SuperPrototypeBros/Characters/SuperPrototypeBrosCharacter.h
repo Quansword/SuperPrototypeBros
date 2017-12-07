@@ -32,14 +32,32 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 
-	float moveAxis, upAim, rightAim;
+	float upAim, rightAim;
 	short rAiming;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float moveAxis;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	bool loaded;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	bool fired;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	int health;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int maxHealth;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	int stock;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	int defaultStock;
+
+	UFUNCTION(BlueprintCallable, Category = "Health")
+	void AddHealth(int val);
 
 public:
 	ASuperPrototypeBrosCharacter();

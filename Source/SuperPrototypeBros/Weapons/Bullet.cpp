@@ -11,4 +11,6 @@ ABullet::ABullet()
 	Capsule->SetCapsuleHalfHeight(22.f);
 	Capsule->SetEnableGravity(false);
 	SetRootComponent(Capsule);
+
+	canKill = true;
 }

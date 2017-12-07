@@ -40,6 +40,10 @@ ASuperPrototypeBrosCharacter::ASuperPrototypeBrosCharacter()
 	rightAim = 0;
 	rAiming = 0;
 	loaded = true;
+	health = 10;
+	maxHealth = 10;
+	stock = 4;
+	defaultStock = 4;
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
@@ -129,4 +133,14 @@ void ASuperPrototypeBrosCharacter::Tick(float DeltaTime)
 			AimCone->SetWorldRotation(FRotator(0, 0, rAiming * 90));
 		}
 	}
+}
+
+void ASuperPrototypeBrosCharacter::AddHealth(int val)
+{
+	health += val;
+
+	if (health > maxHealth)
+		health = maxHealth;
+	else if (health < 0)
+		health = 0;
 }
