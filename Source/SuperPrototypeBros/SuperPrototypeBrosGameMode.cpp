@@ -8,14 +8,20 @@
 ASuperPrototypeBrosGameMode::ASuperPrototypeBrosGameMode()
 {
 	// set default pawn class to our Blueprinted character
-	static ConstructorHelpers::FClassFinder<APawn> OneBulletChar(TEXT("/Game/SideScrollerCPP/Blueprints/CatCharacter"));
-	if (OneBulletChar.Class != NULL)
+	static ConstructorHelpers::FClassFinder<APawn> OneBulletChar(TEXT("/Game/SideScrollerCPP/Blueprints/SideScrollerCharacter"));
+	static ConstructorHelpers::FClassFinder<APawn> CatChar(TEXT("/Game/SideScrollerCPP/Blueprints/CatCharacter"));
+	OBPawn = OneBulletChar.Class;
+	CatPawn = CatChar.Class;
+
+	if (OBPawn != NULL)
 	{
-		DefaultPawnClass = OneBulletChar.Class;
+		DefaultPawnClass = OBPawn;
 	}
 }
 
 void ASuperPrototypeBrosGameMode::BeginPlay()
 {
+	DefaultPawnClass = CatPawn;
+
 	UGameplayStatics::CreatePlayer(this);
 }

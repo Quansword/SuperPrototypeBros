@@ -65,6 +65,9 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	void AddStock(int val);
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void Tick2();
+
 public:
 	ASuperPrototypeBrosCharacter();
 

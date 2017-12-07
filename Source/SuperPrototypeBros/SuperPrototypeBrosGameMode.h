@@ -11,6 +11,10 @@ class ASuperPrototypeBrosGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+protected:
+	TSubclassOf<APawn> OBPawn;
+	TSubclassOf<APawn> CatPawn;
+
 public:
 	ASuperPrototypeBrosGameMode();
 

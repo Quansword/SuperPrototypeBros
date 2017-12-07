@@ -134,6 +134,8 @@ void ASuperPrototypeBrosCharacter::Tick(float DeltaTime)
 			AimCone->SetWorldRotation(FRotator(0, 0, rAiming * 90));
 		}
 	}
+
+	Tick2();
 }
 
 void ASuperPrototypeBrosCharacter::AddHealth(int val)
