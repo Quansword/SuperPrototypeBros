@@ -40,6 +40,7 @@ ASuperPrototypeBrosCharacter::ASuperPrototypeBrosCharacter()
 	rightAim = 0;
 	rAiming = 0;
 	loaded = true;
+	invulnerable = false;
 	health = 10;
 	maxHealth = 10;
 	stock = 4;
@@ -143,4 +144,14 @@ void ASuperPrototypeBrosCharacter::AddHealth(int val)
 		health = maxHealth;
 	else if (health < 0)
 		health = 0;
+}
+
+void ASuperPrototypeBrosCharacter::AddStock(int val)
+{
+	stock += val;
+
+	if (stock > defaultStock)
+		stock = defaultStock;
+	else if (stock < 0)
+		stock = 0;
 }

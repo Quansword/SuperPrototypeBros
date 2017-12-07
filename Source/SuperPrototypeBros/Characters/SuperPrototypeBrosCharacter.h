@@ -45,6 +45,9 @@ protected:
 	bool fired;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool invulnerable;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int health;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -58,6 +61,9 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	void AddHealth(int val);
+
+	UFUNCTION(BlueprintCallable, Category = "Health")
+	void AddStock(int val);
 
 public:
 	ASuperPrototypeBrosCharacter();
